@@ -72,6 +72,17 @@ color:#FFC300;
 margin-bottom:20px;
 }
 
+/* Search Box */
+#searchInput{
+padding:12px;
+width:80%;
+max-width:400px;
+border-radius:25px;
+border:none;
+outline:none;
+margin-bottom:30px;
+}
+
 /* Music Card */
 .music-box{
 background:#222;
@@ -128,13 +139,15 @@ Submit Your Music
 <section id="music">
 <h2>My Music</h2>
 
+<input type="text" id="searchInput" onkeyup="searchMusic()" placeholder="Search for a song...">
+
 <div class="music-box">
 <p>MC BEN X HEAVENLY BOY - True Life Story</p>
 <audio controls>
-<source src="MC BEN x heavenly boy .mp3" type="audio/mpeg">
+<source src="MC BEN x heavenly boy.mp3" type="audio/mpeg">
 </audio>
 <br>
-<a href="MC BEN x heavenly boy .mp3" download>
+<a href="MC BEN x heavenly boy.mp3" download>
 <button>Download</button>
 </a>
 </div>
@@ -142,10 +155,10 @@ Submit Your Music
 <div class="music-box">
 <p>MC Ben - Confuse</p>
 <audio controls>
-<source src="confuse .mp3" type="audio/mpeg">
+<source src="confuse.mp3" type="audio/mpeg">
 </audio>
 <br>
-<a href="confuse .mp3" download>
+<a href="confuse.mp3" download>
 <button>Download</button>
 </a>
 </div>
@@ -153,10 +166,10 @@ Submit Your Music
 <div class="music-box">
 <p>Nairaty ft Mc Ben - Ginger</p>
 <audio controls>
-<source src="ginger .mp3" type="audio/mpeg">
+<source src="ginger.mp3" type="audio/mpeg">
 </audio>
 <br>
-<a href="ginger .mp3" download>
+<a href="ginger.mp3" download>
 <button>Download</button>
 </a>
 </div>
@@ -176,12 +189,11 @@ Submit Your Music
 
 <section id="about">
 <h2>About MC BEN</h2>
-<p>MC BEN is a vibrant Afrobeat artist bringing rhythm, culture and powerful messages to the world stage. His sound blends African energy with global vibes.</p>
+<p>MC BEN is a vibrant Afrobeat artist bringing rhythm, culture and powerful messages to the world stage.</p>
 </section>
 
 <section id="contact">
 <h2>Contact</h2>
-<p>Bookings & Collaborations</p>
 <p>Email: mcben0424@gmail.com</p>
 <p>WhatsApp: +2349072008740</p>
 </section>
@@ -190,111 +202,22 @@ Submit Your Music
 © 2026 MC BEN. All Rights Reserved.
 </footer>
 
-</body>
-</html>max-width:400px;
-border-radius:15px;
-box-shadow:0 0 15px rgba(255,255,255,0.1);
+<script>
+function searchMusic() {
+let input = document.getElementById("searchInput");
+let filter = input.value.toLowerCase();
+let boxes = document.getElementsByClassName("music-box");
+
+for (let i = 0; i < boxes.length; i++) {
+let text = boxes[i].innerText.toLowerCase();
+if (text.includes(filter)) {
+boxes[i].style.display = "";
+} else {
+boxes[i].style.display = "none";
 }
-
-.music-box button{
-margin-top:10px;
-background:#FF6B00;
-color:white;
 }
-footer{
-background:#000;
-padding:20px;
-text-align:center;
-color:gray;
 }
-</style>
-</head>
-
-<body>
-
-<nav>
-<a href="#">Home</a>
-<a href="#music">Music</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-</nav>
-
-<header>
-<h1>MC BEN</h1>
-<p>Afrobeat | Global Sound | Energy</p>
-<a href="#music"><button>Listen Now</button></a>
-</header>
-
-<section id="music">
-<h2>My Music</h2>
-
-<div class="music-box">
-<p>MC BEN X HEAVENLY BOY 
-
-True life story </p>
-<audio controls>
-<source src="MC BEN x heavenly boy .mp3" type="audio/mpeg">
-</audio>
-<br>
-<a href="MC BEN x heavenly boy .mp3" download>
-<button>Download</button>
-</a>
-</div>
-
-<div class="music-box">
-<p>MC Ben-confuse </p>
-<audio controls>
-<source src="confuse .mp3" type="audio/mpeg">
-</audio>
-<br>
-<a href="confuse .mp3" download>
-<button>Download</button>
-</a>
-</div>
-
-</section>
-
-  
-
-<div class="music-box">
-<p>Nairaty ft Mc Ben-ginger</p>
-<audio controls>
-<source src="ginger .mp3" type="audio/mpeg">
-</audio>
-<br>
-<a href="Ginger .mp3" download>
-<button>Download</button>
-</a>
-</div>
-
-
-<div class="music-box">
-<p>Mc ben_ Temptatoin</p>
-<audio controls>
-<source src="temptation.mp3" type="audio/mpeg">
-</audio>
-<br>
-<a href="temptation .mp3" download>
-<button>Download</button>
-</a>
-</div>
-</section>
-
-<section id="about">
-<h2>About MC BEN</h2>
-<p>MC BEN is a vibrant Afrobeat artist bringing rhythm, culture and powerful messages to the world stage. His sound blends African energy with global vibes.</p>
-</section>
-
-<section id="contact">
-<h2>Contact</h2>
-<p>Bookings & Collaborations</p>
-<p>Email: mcben0424@gmail.com</p>
-<p>WhatsApp: +2349072008740</p>
-</section>
-
-<footer>
-© 2026 MC BEN. All Rights Reserved.
-</footer>
+</script>
 
 </body>
-</html>
+  </html>
